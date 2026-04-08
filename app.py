@@ -5,6 +5,7 @@ import google.generativeai as genai
 
 st.set_page_config(page_title="Business Analytics Hub", layout="wide")
 st.title("Intelligent Business Analytics")
+st.write(f"Is the API Key loaded? {'✅ Yes' if 'GEMINI_API_KEY' in st.secrets else '❌ No'}")
 
 # 1. The File Uploader
 st.markdown("### Step 1: Upload Your Data")
