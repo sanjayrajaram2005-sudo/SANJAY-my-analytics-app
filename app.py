@@ -10,7 +10,13 @@ else:
 
 st.set_page_config(page_title="Business Analytics Hub", layout="wide")
 st.title("Intelligent Business Analytics")
-st.write(f"Is the API Key loaded? {'✅ Yes' if 'GEMINI_API_KEY' in st.secrets else '❌ No'}")
+st.markdown("### 🕵️ J.A.R.V.I.S. Diagnostic Scanner")
+try:
+    secret_names = list(st.secrets.keys())
+    st.info(f"The vault has {len(secret_names)} secret(s) inside.")
+    st.warning(f"The exact names I can see are: {secret_names}")
+except Exception as e:
+    st.error("The vault is completely empty. I see nothing.")
 
 # 1. The File Uploader
 st.markdown("### Step 1: Upload Your Data")
