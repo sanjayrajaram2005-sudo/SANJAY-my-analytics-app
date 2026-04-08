@@ -2,6 +2,11 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import google.generativeai as genai
+# Temporary debug check
+if "GEMINI_API_KEY" not in st.secrets:
+    st.error("🚨 J.A.R.V.I.S. Alert: The Secret Key is missing from this app's settings!")
+else:
+    st.success("✅ J.A.R.V.I.S. Alert: Secret Key found and loaded.")
 
 st.set_page_config(page_title="Business Analytics Hub", layout="wide")
 st.title("Intelligent Business Analytics")
